@@ -1,6 +1,6 @@
 # jQuery.appear
 
-This plugin is a total revamp of jquery.appear plugin hosted on http://code.google.com/p/jquery-appear/
+This is a total revamp of original jquery.appear plugin hosted on http://code.google.com/p/jquery-appear/
 
 It mimics a custom "appear" event, which fires when an element scrolls into view or otherwise becomes visible to the user.
 
