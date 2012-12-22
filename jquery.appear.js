@@ -61,14 +61,12 @@
     appear: function(callback, options) {
       $.extend(defaults, options || {});
       if (!check_binded) {
-        $(window).scroll(function() {
-          if (check_lock) {
-            return;
-          }
+        var on_check = function() {
+          if (check_lock) { return; }
           check_lock = true;
-
           _.delay(process, defaults.interval);
-        });
+        };
+        $(window).scroll(on_check).resize(on_check);
         check_binded = true;
       }
 
