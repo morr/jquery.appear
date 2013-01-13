@@ -6,7 +6,7 @@
  *
  * https://github.com/morr/jquery.appear/
  *
- * Version: 0.1
+ * Version: 0.2
  */
 (function($) {
   var data = {};
@@ -18,7 +18,25 @@
   var $window = $(window);
   var $document = $(document);
 
-  function check_appearance(element) {
+  function process() {
+    check_lock = false;
+    for (var selector in data) {
+      var $appeared = $(selector).filter(function() {
+        return $(this).is(':appeared');
+      });
+
+      if ($appeared.length) {
+        if (data[selector]) {
+          data[selector]($appeared);
+        } else {
+          $appeared.first().trigger('appear', [$appeared]);
+        }
+      }
+    }
+  }
+
+  // "appeared" custom filter
+  $.expr[':']['appeared'] = function(element) {
     var $element = $(element);
     if (!$element.is(':visible')) {
       return false;
@@ -31,28 +49,12 @@
     var top = offset.top;
 
     if (top + $element.height() >= window_top &&
-        top <= window_top + $window.height() &&
+        top - ($element.data('appear-top-offset') || 0) <= window_top + $window.height() &&
         left + $element.width() >= window_left &&
-        left <= window_left + $window.width()) {
+        left - ($element.data('appear-left-offset') || 0) <= window_left + $window.width()) {
       return true;
     } else {
       return false;
-    }
-  }
-
-  function process() {
-    check_lock = false;
-    for (var selector in data) {
-      var $appeared = $(_.select($(selector), function(v,k) {
-        return check_appearance(v);
-      }));
-      if ($appeared.length) {
-        if (data[selector]) {
-          data[selector]($appeared);
-        } else {
-          $appeared.trigger('appear', $appeared);
-        }
-      }
     }
   }
 
@@ -62,15 +64,21 @@
       $.extend(defaults, options || {});
       if (!check_binded) {
         var on_check = function() {
-          if (check_lock) { return; }
+          if (check_lock) {
+            return;
+          }
           check_lock = true;
-          _.delay(process, defaults.interval);
+
+          setTimeout(process, defaults.interval);
         };
+
         $(window).scroll(on_check).resize(on_check);
         check_binded = true;
       }
 
-      _.delay(process, defaults.interval);
+      if (options && options.force_process) {
+        setTimeout(process, defaults.interval);
+      }
       data[this.selector] = callback;
       return $(this.selector);
     }

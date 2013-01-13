@@ -2,18 +2,28 @@
 
 This is a total revamp of original jquery.appear plugin hosted on http://code.google.com/p/jquery-appear/
 
-It mimics a custom "appear" event, which fires when an element scrolls into view or otherwise becomes visible to the user.
+This plugin can be used to prevent unnecessary processeing for content that is hidden or is outside of the browser view port.
+
+It implements a custom *appear* event which is fired when an element became visible in the browser view port.
 
         $('someselector').appear();
         $('someselector').on('appear', function() {
           // this element is now inside browser viewport
         });
 
-This plugin can be used to prevent unnecessary requests for content that's hidden or outside the viewable area.
+If you want to fire *appear* event for elements which are close to vieport but are not visible yet, you may add data attributes *appear-top-offset* and *appear-left-offset* to DOM nodes.
+
+        <div class="postloader" data-appear-top-offset="600">...</div> # appear will be fired when an element is below browser view port for 600 or less pixels
+
+Appear checking can be forced by calling *$.force_appear()*. This is usable in cases when page is in initial state (not scrolled and not resized) and you want manually trigger appearance check.
+
+Also this plugin provides custom jQuery filter for manual checking element appearance.
+
+        $('someselector').is(':appeared')
 
 # License
 
-> Copyright (C) 2012  Andrey Sidorov <takandar@gmail.com>
+> Licensed under <a href="http://opensource.org/licenses/MIT">MIT license</a>.
 >
 > Permission is hereby granted, free of charge, to any person
 > obtaining a copy of this software and associated documentation
