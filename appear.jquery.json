@@ -3,7 +3,8 @@
   "title": "jQuery Appear",
   "description": "jQuery plugin for custom appear event.",
   "keywords": [
-    "appear",
+    "event",
+    "appear"
   ],
   "version": "0.2.0",
   "author": {
