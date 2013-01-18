@@ -6,7 +6,7 @@
  *
  * https://github.com/morr/jquery.appear/
  *
- * Version: 0.2
+ * Version: 0.2.0
  */
 (function($) {
   var data = {};

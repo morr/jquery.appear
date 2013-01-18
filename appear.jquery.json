@@ -1,0 +1,30 @@
+{
+  "name": "appear",
+  "title": "jQuery Appear",
+  "description": "jQuery plugin for custom appear event.",
+  "keywords": [
+    "appear",
+  ],
+  "version": "0.2.0",
+  "author": {
+    "name": "Andrey Sidorov",
+    "email" : "takandar@gmail.com",
+    "url": "https://github.com/morr/jquery.appear/blob/master/AUTHORS.txt"
+  },
+  "maintainers": [
+    {
+      "name": "Andrey Sidorov",
+      "email": "takandar@gmail.com"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "homepage": "https://github.com/morr/jquery.appear",
+  "dependencies": {
+    "jquery": ">=1.5"
+  }
+}
