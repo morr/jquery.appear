@@ -1,7 +1,7 @@
 {
   "name": "appear",
   "title": "jQuery Appear",
-  "description": "jQuery plugin for custom appear event.",
+  "description": "It implements a custom 'appear' event which is fired when an element became visible in the browser view port.",
   "keywords": [
     "event",
     "appear"
