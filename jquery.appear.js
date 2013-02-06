@@ -73,12 +73,6 @@
         };
 
         $(window).scroll(on_check).resize(on_check);
-        this.parents().each(function() {
-          $this = $(this);
-          if ($this.css('overflow') == 'scroll' || $this.css('overflow-x') == 'scroll' || $this.css('overflow-y') == 'scroll') {
-            $this.scroll(on_check).resize(on_check);
-          }
-        });
         check_binded = true;
       }
 

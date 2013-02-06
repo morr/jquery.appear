@@ -2,6 +2,8 @@
 
 This is a total revamp of original jquery.appear plugin hosted on http://code.google.com/p/jquery-appear/
 
+<a href="http://morr.github.com/appear.html">Demo page</a>
+
 This plugin can be used to prevent unnecessary processeing for content that is hidden or is outside of the browser viewport.
 
 It implements a custom *appear* event which is fired when an element became visible in the browser viewport.

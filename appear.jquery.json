@@ -6,7 +6,7 @@
     "event",
     "appear"
   ],
-  "version": "0.3.0",
+  "version": "0.2.1",
   "author": {
     "name": "Andrey Sidorov",
     "email" : "takandar@gmail.com",
@@ -25,6 +25,7 @@
     }
   ],
   "homepage": "https://github.com/morr/jquery.appear",
+  "demo": "http://morr.github.com/appear.html",
   "dependencies": {
     "jquery": ">=1.5"
   }
