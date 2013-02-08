@@ -1,12 +1,13 @@
 {
   "name": "appear",
   "title": "jQuery Appear",
-  "description": "It implements a custom 'appear' event which is fired when an element became visible in the browser view port.",
+  "description": "It implements a custom 'appear'/'disappear' events which are fired when an element became visible/invisible in the browser view port.",
   "keywords": [
     "event",
-    "appear"
+    "appear",
+    "disappear"
   ],
-  "version": "0.2.1",
+  "version": "0.3.1",
   "author": {
     "name": "Andrey Sidorov",
     "email" : "takandar@gmail.com",
@@ -26,6 +27,7 @@
   ],
   "homepage": "https://github.com/morr/jquery.appear",
   "demo": "http://morr.github.com/appear.html",
+  "issues": "https://github.com/morr/jquery.appear/issues",
   "dependencies": {
     "jquery": ">=1.5"
   }

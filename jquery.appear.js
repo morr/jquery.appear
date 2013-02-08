@@ -6,32 +6,36 @@
  *
  * https://github.com/morr/jquery.appear/
  *
- * Version: 0.2.1
+ * Version: 0.3.1
  */
 (function($) {
-  var data = {};
+  var selectors = [];
+
   var check_binded = false;
   var check_lock = false;
   var defaults = {
-    interval: 250
+    interval: 250,
+    force_appear: false
   }
   var $window = $(window);
   var $document = $(document);
 
+  var $prior_appeared;
+
   function process() {
     check_lock = false;
-    for (var selector in data) {
-      var $appeared = $(selector).filter(function() {
+    for (var index in selectors) {
+      var $appeared = $(selectors[index]).filter(function() {
         return $(this).is(':appeared');
       });
 
-      if ($appeared.length) {
-        if (data[selector]) {
-          data[selector]($appeared);
-        } else {
-          $appeared.first().trigger('appear', [$appeared]);
-        }
+      $appeared.trigger('appear', [$appeared]);
+
+      if ($prior_appeared) {
+        var $disappeared = $prior_appeared.not($appeared);
+        $disappeared.trigger('disappear', [$disappeared]);
       }
+      $prior_appeared = $appeared;
     }
   }
 
@@ -60,8 +64,8 @@
 
   $.fn.extend({
     // watching for element's appearance in browser viewport
-    appear: function(callback, options) {
-      $.extend(defaults, options || {});
+    appear: function(options) {
+      var opts = $.extend({}, defaults, options || {});
       if (!check_binded) {
         var on_check = function() {
           if (check_lock) {
@@ -69,17 +73,17 @@
           }
           check_lock = true;
 
-          setTimeout(process, defaults.interval);
+          setTimeout(process, opts.interval);
         };
 
         $(window).scroll(on_check).resize(on_check);
         check_binded = true;
       }
 
-      if (options && options.force_process) {
-        setTimeout(process, defaults.interval);
+      if (opts.force_process) {
+        setTimeout(process, opts.interval);
       }
-      data[this.selector] = callback;
+      selectors.push(this.selector);
       return $(this.selector);
     }
   });
