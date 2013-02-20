@@ -66,6 +66,7 @@
     // watching for element's appearance in browser viewport
     appear: function(options) {
       var opts = $.extend({}, defaults, options || {});
+      var selector = this.selector || this;
       if (!check_binded) {
         var on_check = function() {
           if (check_lock) {
@@ -83,8 +84,8 @@
       if (opts.force_process) {
         setTimeout(process, opts.interval);
       }
-      selectors.push(this.selector);
-      return $(this.selector);
+      selectors.push(selector);
+      return $(selector);
     }
   });
 
