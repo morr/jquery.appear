@@ -18,7 +18,6 @@
     force_appear: false
   }
   var $window = $(window);
-  var $document = $(document);
 
   var $prior_appeared;
 
