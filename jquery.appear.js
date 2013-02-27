@@ -15,7 +15,7 @@
   var check_lock = false;
   var defaults = {
     interval: 250,
-    force_appear: false
+    force_process: false
   }
   var $window = $(window);
 
