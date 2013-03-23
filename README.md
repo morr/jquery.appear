@@ -8,7 +8,9 @@ This plugin can be used to prevent unnecessary processeing for content that is h
 
 It implements a custom *appear*/*disappear* events which are fired when an element became visible/invisible in the browser viewport.
 
-        $('someselector').appear(); // Function supports optinal hash with "force_appear" and "interval" keys. Check source code for details.
+        $('someselector').appear(); // It supports optinal hash with "force_process" and "interval" keys. Check source code for details.
+
+        $('<div>test</div>').appear(); // It also supports raw DOM nodes wrapped in jQuery.
 
         $('someselector').on('appear', function(event, $all_appeared_elements) {
           // this element is now inside browser viewport

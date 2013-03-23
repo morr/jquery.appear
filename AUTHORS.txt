@@ -1,3 +1,4 @@
 Andrey Sidorov<takandar@gmail.com>
+Juan Hoyos<https://github.com/elhoyos>
 Boris Nadion<https://github.com/borisnadion>
 fhackenberger<https://github.com/fhackenberger>
