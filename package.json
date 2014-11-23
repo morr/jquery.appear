@@ -1,5 +1,5 @@
 {
-  "name": "appear",
+  "name": "jquery.appear",
   "title": "jQuery Appear",
   "description": "It implements a custom 'appear'/'disappear' events which are fired when an element became visible/invisible in the browser view port.",
   "keywords": [
