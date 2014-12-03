@@ -1,0 +1,17 @@
+{
+  "name": "jquery.appear",
+  "version": "0.3.3",
+  "main": "jquery.appear.js",
+  "license": "MIT",
+  "ignore": [
+
+  ],
+  "keywords": [
+    "event",
+    "appear",
+    "disappear"
+  ],
+  "dependencies": {
+    "jquery": ">=1.5"
+  }
+}
