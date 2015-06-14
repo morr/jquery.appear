@@ -16,7 +16,7 @@
   var defaults = {
     interval: 250,
     force_process: false
-  }
+  };
   var $window = $(window);
 
   var $prior_appeared;
@@ -36,7 +36,7 @@
       }
       $prior_appeared = $appeared;
     }
-  }
+  };
 
   // "appeared" custom filter
   $.expr[':']['appeared'] = function(element) {
@@ -59,7 +59,7 @@
     } else {
       return false;
     }
-  }
+  };
 
   $.fn.extend({
     // watching for element's appearance in browser viewport
@@ -94,7 +94,7 @@
       if (check_binded) {
         process();
         return true;
-      };
+      }
       return false;
     }
   });
