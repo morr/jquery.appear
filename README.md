@@ -19,7 +19,7 @@ It implements a custom *appear*/*disappear* events which are fired when an eleme
           // this element is now outside browser viewport
         });
 
-If you want to fire *appear* event for elements which are close to vieport but are not visible yet, you may add data attributes *appear-top-offset* and *appear-left-offset* to DOM nodes.
+If you want to fire *appear* event for elements which are close to viewport but are not visible yet, you may add data attributes *appear-top-offset* and *appear-left-offset* to DOM nodes.
 
         <div class="postloader" data-appear-top-offset="600">...</div> # appear will be fired when an element is below browser viewport for 600 or less pixels
 
