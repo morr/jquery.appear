@@ -21,12 +21,16 @@
 
   var $prior_appeared = [];
 
+  function appeared(selector) {
+    return $(selector).filter(function() {
+      return $(this).is(':appeared');
+    });
+  }
+
   function process() {
     check_lock = false;
     for (var index = 0, selectorsLength = selectors.length; index < selectorsLength; index++) {
-      var $appeared = $(selectors[index]).filter(function() {
-        return $(this).is(':appeared');
-      });
+      var $appeared = appeared(selectors[index]);
 
       $appeared.trigger('appear', [$appeared]);
 
@@ -36,7 +40,7 @@
       }
       $prior_appeared[index] = $appeared;
     }
-  };
+  }
 
   function add_selector(selector) {
     selectors.push(selector);
@@ -44,7 +48,7 @@
   }
 
   // "appeared" custom filter
-  $.expr[':']['appeared'] = function(element) {
+  $.expr[':'].appeared = function(element) {
     var $element = $(element);
     if (!$element.is(':visible')) {
       return false;
