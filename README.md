@@ -4,7 +4,7 @@ This is a total revamp of original jquery.appear plugin hosted on http://code.go
 
 Check <a href="http://morr.github.com/appear.html">demo page</a>!
 
-This plugin can be used to prevent unnecessary processeing for content that is hidden or is outside of the browser viewport.
+This plugin can be used to prevent unnecessary processing for content that is hidden or is outside of the browser viewport.
 
 It implements a custom *appear*/*disappear* events which are fired when an element became visible/invisible in the browser viewport.
 
