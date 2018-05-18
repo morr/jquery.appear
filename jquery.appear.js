@@ -6,7 +6,7 @@
  *
  * https://github.com/morr/jquery.appear/
  *
- * Version: 0.3.6
+ * Version: 0.4
  */
 (function($) {
   var selectors = [];
@@ -72,9 +72,16 @@
 
   $.fn.extend({
     // watching for element's appearance in browser viewport
-    appear: function(options) {
+    appear: function(selector, options) {
+      $.appear(this, options);
+      return this;
+    }
+  });
+
+  $.extend({
+    appear: function(selector, options) {
       var opts = $.extend({}, defaults, options || {});
-      var selector = this.selector || this;
+
       if (!check_binded) {
         var on_check = function() {
           if (check_lock) {
@@ -92,12 +99,9 @@
       if (opts.force_process) {
         setTimeout(process, opts.interval);
       }
-      add_selector(selector);
-      return $(selector);
-    }
-  });
 
-  $.extend({
+      add_selector(selector);
+    },
     // force elements's appearance check
     force_appear: function() {
       if (check_binded) {
