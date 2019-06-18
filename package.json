@@ -1,5 +1,5 @@
 {
-  "name": "jquery.appear",
+  "name": "jquery-appear",
   "title": "jQuery Appear",
   "description": "It implements a custom 'appear'/'disappear' events which are fired when an element became visible/invisible in the browser view port.",
   "keywords": [
@@ -13,7 +13,7 @@
     "email" : "takandar@gmail.com",
     "url": "https://github.com/morr/jquery.appear/blob/master/AUTHORS.txt"
   },
-  "main": "jquery.appear.js",
+  "main": "index.js",
   "maintainers": [
     {
       "name": "Andrey Sidorov",
@@ -29,7 +29,7 @@
   "homepage": "https://github.com/morr/jquery.appear",
   "demo": "http://morr.github.com/appear.html",
   "issues": "https://github.com/morr/jquery.appear/issues",
-  "dependencies": {
-    "jquery": ">=1.5"
+  "peerDependencies": {
+    "jquery": ">=1.7"
   }
 }
