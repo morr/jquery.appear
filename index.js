@@ -6,7 +6,7 @@
  *
  * https://github.com/morr/jquery.appear/
  *
- * Version: 0.4
+ * Version: 0.5
  */
 (function($) {
   var selectors = [];

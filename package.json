@@ -1,13 +1,13 @@
 {
-  "name": "jquery-appear",
-  "title": "jQuery Appear",
+  "name": "jquery-appear-original",
+  "title": "jQuery Appear/Disappear",
   "description": "It implements a custom 'appear'/'disappear' events which are fired when an element became visible/invisible in the browser view port.",
   "keywords": [
     "event",
     "appear",
     "disappear"
   ],
-  "version": "0.4.1",
+  "version": "0.5.0",
   "author": {
     "name": "Andrey Sidorov",
     "email" : "takandar@gmail.com",
