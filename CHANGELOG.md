@@ -1,6 +1,10 @@
 jquery-appear-original CHANGELOG
 ======================
 
+0.5.1
+-----
+- Add eslint
+
 0.5.0
 -----
 - Publish to npm. Rename to jquery-appear-original because of jquery.appear name is taken.

@@ -1,0 +1,79 @@
+---
+env:
+  browser: true
+  jquery: true
+
+extends:
+  - airbnb-base/legacy
+
+rules:
+  quotes:
+    - error
+    - single
+  object-curly-spacing:
+    - error
+    - always
+  semi:
+    - error
+    - always
+  object-curly-newline: 0
+  arrow-body-style:
+    - 2
+    - as-needed
+  arrow-parens:
+    - 2
+    - as-needed
+  no-console: 0
+  no-alert: 0
+  no-trailing-spaces:
+    - error
+  no-return-assign: 0
+  no-param-reassign:
+    - 2
+    - props: false
+  no-underscore-dangle: 0
+  vars-on-top: 0
+  global-require: 0
+  no-unused-vars:
+    - error
+    - argsIgnorePattern: ^_
+      varsIgnorePattern: ^_
+  no-use-before-define: 0
+  no-mixed-operators: 0
+  no-new: 0
+  no-plusplus: 0
+  no-shadow:
+    - 2
+    - allow:
+      - '_'
+  function-paren-newline: 0
+  comma-dangle:
+    - warn
+    - never
+  max-len:
+    - warn
+    - 100
+    - ignoreComments: true
+      ignoreUrls: true
+      ignorePattern: "\\s*<"
+  indent:
+    - error
+    - 2
+    - ignoreComments: true
+      SwitchCase: 1
+  linebreak-style:
+    - error
+    - unix
+  func-names: 0
+  implicit-arrow-linebreak: 0
+  prefer-template: 0
+  class-methods-use-this: 0
+  radix: 0
+  operator-linebreak:
+    - 2
+    - after
+  keyword-spacing:
+    - error
+    - after: true
+      before: true
+  lines-between-class-members: 0
