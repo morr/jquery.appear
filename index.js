@@ -1,13 +1,3 @@
-/*
- * jQuery appear plugin
- *
- * Copyright (c) 2012 Andrey Sidorov
- * licensed under MIT license.
- *
- * https://github.com/morr/jquery.appear/
- *
- * Version: 0.5
- */
 (function ($) {
   var selectors = [];
 
@@ -21,22 +11,30 @@
 
   var $priorAppeared = [];
 
-  function appeared(selector) {
-    return $(selector).filter(function () {
-      return $(this).is(':appeared');
-    });
+  function isAppeared() {
+    return $(this).is(':appeared');
+  }
+
+  function isNotTriggered() {
+    return !$(this).data('_appear_triggered');
   }
 
   function process() {
     checkLock = false;
-    for (var index = 0, selectorsLength = selectors.length; index < selectorsLength; index++) {
-      var $appeared = appeared(selectors[index]);
 
-      $appeared.trigger('appear', [$appeared]);
+    for (var index = 0, selectorsLength = selectors.length; index < selectorsLength; index++) {
+      var $appeared = selectors[index].filter(isAppeared);
+
+      $appeared
+        .filter(isNotTriggered)
+        .data('_appear_triggered', true)
+        .trigger('appear', [$appeared]);
 
       if ($priorAppeared[index]) {
         var $disappeared = $priorAppeared[index].not($appeared);
-        $disappeared.trigger('disappear', [$disappeared]);
+        $disappeared
+          .data('_appear_triggered', false)
+          .trigger('disappear', [$disappeared]);
       }
       $priorAppeared[index] = $appeared;
     }

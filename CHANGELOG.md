@@ -1,6 +1,15 @@
 jquery-appear-original CHANGELOG
 ======================
 
+0.6.1
+-----
+- Bugfix of `disappear` logic
+
+0.6.0
+-----
+- *BREAKING CHANGE* `appear` event is triggered only once for visible element.
+When element became disappeared, `appear` could be triggered once again.
+
 0.5.1
 -----
 - Add eslint
