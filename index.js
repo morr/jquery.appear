@@ -23,7 +23,7 @@
     checkLock = false;
 
     for (var index = 0, selectorsLength = selectors.length; index < selectorsLength; index++) {
-      var $appeared = selectors[index].filter(isAppeared);
+      var $appeared = $(selectors[index]).filter(isAppeared);
 
       $appeared
         .filter(isNotTriggered)

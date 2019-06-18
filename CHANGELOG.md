@@ -1,6 +1,10 @@
 jquery-appear-original CHANGELOG
 ======================
 
+0.6.2
+-----
+- Bugfix
+
 0.6.1
 -----
 - Bugfix of `disappear` logic
